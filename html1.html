@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор вкладов</title>
+	<link rel="stylesheet" type="text/css" href="css1.css">
+</head>
+<body>
+	<h1>Калькулятор простых вкладов</h1>
+	<script>
+		function calc()
+		{
+			var sum = document.getElementById('sum').value;
+			var p = document.getElementById('p').value;
+			var time = document.getElementById('time').value;
+			sum = parseFloat(sum.replace(/[^0-9.,]/gim, ''));
+			p = parseFloat(p.replace(/[^0-9.,]/gim, ''));
+			time = parseFloat(time.replace(/[^0-9.,]/gim, ''));
+			var res = sum + sum * p / (12 * 100) * time;
+			document.getElementById('res').innerHTML = res.toFixed(2) + " рублей";
+		}
+	</script>
+	<form>
+		Сумма вклада:<input type='text' id='sum' name=''>р.<br>
+		Годовой процент вклада:<input type='text' id='p' name=''>%<br>
+		Срок размещения в месяцах:<input type='text' id='time' name=''>месяцев<br>
+		
+		<input type='button' class="b1" value='Рассчитать' onclick="calc();"><br>
+	</form>
+	Итого:<form id='res'></form>
+	<div>
+		<br>Банковский вклад (или банковский депозит) — сумма денег, переданная лицом кредитному учреждению с целью получить доход в виде процентов, образующихся в ходе финансовых операций с вкладом.
+	<br><br>Начисление процентов происходит на условиях, описанных в договоре по вкладу или в общих условиях по размещению денежных средств во вклады конкретного банка. Как правило, это ежемесячное, ежеквартальное начисления или начисление процентов в конце срока вклада. Обычно в договорах по вкладам указываются годовые проценты, а не проценты на срок хранения. Если в договоре по вкладу указан доход 10 % годовых, то это значит, что доход 10 % от суммы вклада начислялся бы только в случае размещения денежных средств на срок один год. На самом деле проценты начисляются пропорционально сроку вклада. При этом срок 1 месяц равен 30 дням, а 1 год равен 365 дням.
+	</div>
+</body>
+
+</html>
